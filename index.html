@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./normalize.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Сервис комментариев</title>
+  </head>
+  <body>
+    <header>
+      <h1>Сервис комментариев со спам-фильтром</h1>
+    </header>
+    <main>
+      <h2>Оставьте ваш комментарий</h2>
+      <h2>Чат</h2>
+      <div>
+        <fieldset>
+          <p>Показывать ваше имя?</p>
+          <div>
+            <input type="radio" id="yes" name="displayUsername" value="yes" />
+            <label for="yes">Да</label>
+          </div>
+          <div>
+            <input type="radio" id="no" name="displayUsername" value="no" />
+            <label for="no">Нет</label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="userImage">
+        <p>Введите ссылку <span>вашего аватара</span></p>
+        <input type="text" name="imageURL" id="imageURL" />
+      </div>
+      <div class="enterComment">
+        <label for="comment">Оставьте комментарий
+<textarea id="comment" name="comment" rows="5" cols="33">
+</textarea>
+      </div>
+      <button type="submit">Отправить</button>
+      <div class="newComments">
+      </div>
+    </main>
+    <footer>2025&copy;</footer>
+  </body>
+</html>
