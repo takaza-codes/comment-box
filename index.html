@@ -18,28 +18,47 @@
         <fieldset>
           <p>Показывать ваше имя?</p>
           <div>
-            <input type="radio" id="yes" name="displayUsername" value="yes" />
+            <input
+              type="radio"
+              id="yes"
+              name="displayUsername"
+              value="yes"
+              onclick="showName()"
+            />
             <label for="yes">Да</label>
           </div>
           <div>
-            <input type="radio" id="no" name="displayUsername" value="no" />
+            <input
+              type="radio"
+              id="no"
+              name="displayUsername"
+              value="no"
+              onclick="showName()"
+            />
             <label for="no">Нет</label>
           </div>
         </fieldset>
       </div>
+      <div id="userName"></div>
       <div class="userImage">
-        <p>Введите ссылку <span>вашего аватара</span></p>
-        <input type="text" name="imageURL" id="imageURL" />
+        <label
+          >Введите ссылку на ваш аватар:
+          <input type="text" name="imageURL" id="imageURL" />
+        </label>
       </div>
       <div class="enterComment">
-        <label for="comment">Оставьте комментарий
-<textarea id="comment" name="comment" rows="5" cols="33">
-</textarea>
+        <label for="comment"
+          >Оставьте комментарий:
+          <textarea id="comment" name="comment" rows="5" cols="33"></textarea>
+        </label>
       </div>
-      <button type="submit">Отправить</button>
-      <div class="newComments">
-      </div>
+      <button type="submit" id="submitButton" onclick="submit()">
+        Отправить
+      </button>
+      <div id="commentSection"></div>
     </main>
     <footer>2025&copy;</footer>
+
+    <script src="./main.js"></script>
   </body>
 </html>

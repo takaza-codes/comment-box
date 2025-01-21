@@ -4,7 +4,7 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
     color: rgb(50, 50, 50);
-    background-color: rgba(116, 213, 216, 0.246);
+    background-color: rgba(85, 211, 215, 0.154);
 }
 
 h1, main {
@@ -13,8 +13,8 @@ h1, main {
 
 main {
     display: grid;
-    grid-template-rows: 20% auto;
-    grid-template-columns: 45% 1fr;
+    grid-template-rows: 15% auto;
+    grid-template-columns: 40% 1fr;
     row-gap: 10px;
     column-gap: 3rem;
 }
@@ -24,9 +24,13 @@ main {
 }
 
 .newComments {
+    padding: 0.5rem 0;
+    border-bottom: 3px solid rgb(151, 73, 162);
+}
+
+#commentSection {
     grid-column: 2 / 3;
-    grid-row: 2 / 5;
-    /* border-bottom: 3px solid rgb(151, 73, 162); */
+    grid-row: 2 / 6;
 }
 
 fieldset {
@@ -37,13 +41,18 @@ fieldset {
     gap: 2rem;
 }
 
+#userName {
+    grid-column: 1 / 2;
+}
+
 #imageURL, textarea {
     border: 3px solid rgb(151, 73, 162);
     width: 90%;
 }
 
-input[type=radio] {
-    border-radius: 0px;
+input[type=text] {
+    border: 3px solid rgb(151, 73, 162);
+    width: 90%;
 }
 
 .enterComment > label, .userImage > p {
@@ -51,6 +60,7 @@ input[type=radio] {
 }
 
 button {
+    grid-column: 1 / 2;
     height: 3rem;
     width: 10rem;
     border: none;
@@ -61,6 +71,17 @@ button {
 button:hover {
     background-color: rgba(128, 255, 0, 0.518);
     color: rgb(70, 69, 69);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.commentText {
+    padding: 15px 0;
 }
 
 footer {
