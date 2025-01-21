@@ -44,6 +44,7 @@ function submit() {
         name = 'username';
     }
 
+    //дефолт аватар один, а не 5
     const avatarInput = document.getElementById('imageURL');
     let avatar = avatarInput.value.trim() ? avatarInput.value.trim() : 'https://images.vexels.com/media/users/3/325213/isolated/preview/c52fc3523ce9a94e0a75edeb1d806c9e-yellow-smiley-face.png';
 
@@ -51,11 +52,19 @@ function submit() {
     const messageInput = document.getElementById('comment');
     let message = checkSpam(messageInput.value.trim());
 
+    //дата отображается в непривычном формате
+    const date = new Date();
+	let currentDate = date.getDate() + "." + (date.getMonth()+1) + "." + date.getFullYear();
+    let currentTime = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();
+    const timeStamp = currentDate + " в " + currentTime;
+
+
     const comment = document.createElement('div');
     comment.className = 'newComments';
     comment.innerHTML = `
     <img src="${avatar}" alt="Аватар" class="avatar";
     <span class="name">${name}</span>
+    <span>${timeStamp}</span>
     <div class="commentText">${message}</div>
     `;
 
