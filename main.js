@@ -39,9 +39,9 @@ function submit() {
     let name;
 
     if (nameInput) {
-        name = nameInput.value.trim() ? formatName(nameInput.value) : 'username';
+        name = nameInput.value.trim() ? formatName(nameInput.value) : 'Username';
     } else {
-        name = 'username';
+        name = 'Username';
     }
 
     const avatarInput = document.getElementById('imageURL');
