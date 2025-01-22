@@ -44,19 +44,34 @@ function submit() {
         name = 'username';
     }
 
-    //дефолт аватар один, а не 5
     const avatarInput = document.getElementById('imageURL');
-    let avatar = avatarInput.value.trim() ? avatarInput.value.trim() : 'https://images.vexels.com/media/users/3/325213/isolated/preview/c52fc3523ce9a94e0a75edeb1d806c9e-yellow-smiley-face.png';
+    let avatar = avatarInput.value.trim() ? avatarInput.value.trim() : randomAvatar();
 
+    function randomAvatar() {
+        const avatars = [
+            "../images/halo.jpg",
+            "../images/bear.png",
+            "../images/clown.jpg",
+            "../images/crazy_eyes.png",
+            "../images/starry_eyes.jpg",
+            "../images/sun.png"
+        ];
+        const randomIndex = Math.floor(Math.random() * avatars.length);
+        return avatars[randomIndex];
+    }
 
     const messageInput = document.getElementById('comment');
     let message = checkSpam(messageInput.value.trim());
 
-    //дата отображается в непривычном формате
+
     const date = new Date();
-	let currentDate = date.getDate() + "." + (date.getMonth()+1) + "." + date.getFullYear();
-    let currentTime = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();
-    const timeStamp = currentDate + " в " + currentTime;
+    const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    };
+    const timeStamp = date.toLocaleDateString ('ru-RU', options) + " в " + date.getHours()+ ":"+ date.getMinutes()+ ":" + date.getSeconds();
 
 
     const comment = document.createElement('div');

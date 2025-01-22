@@ -30,7 +30,7 @@ main {
 
 #commentSection {
     grid-column: 2 / 3;
-    grid-row: 2 / 6;
+    grid-row: 2 / 8;
 }
 
 fieldset {
